@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import pickle
 import numpy as np
+import os 
 
 # app
 app = Flask(__name__)
@@ -122,4 +123,7 @@ def recommend():
 
 if __name__ == '__main__':
     # Run the app in debug mode
-    app.run(debug=True)
+    import os
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
